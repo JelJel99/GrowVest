@@ -17,7 +17,7 @@ class AuthManager {
   }
 
   isAuthPage() {
-    const authPages = ["login.html", "register.html"]
+    const authPages = ["index.html", "register.html"]
     const currentPage = window.location.pathname.split("/").pop()
     return authPages.includes(currentPage) || currentPage === ""
   }
@@ -103,12 +103,12 @@ class AuthManager {
 
   logout() {
     localStorage.removeItem("growvest-session")
-    window.location.href = "login.html"
+    window.location.href = "index.html"
   }
 
   requireAuthentication() {
     if (!this.isAuthenticated()) {
-      window.location.href = "login.html"
+      window.location.href = "index.html"
     }
   }
 
