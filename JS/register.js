@@ -118,11 +118,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
-    if (!userData.agreeToTerms) {
-      errorMessage.textContent = "Anda harus menyetujui syarat dan ketentuan"
-      errorMessage.classList.remove("hidden")
-      return
-    }
+    // if (!userData.agreeToTerms) {
+    //   errorMessage.textContent = "Anda harus menyetujui syarat dan ketentuan"
+    //   errorMessage.classList.remove("hidden")
+    //   return
+    // }
 
     // Show loading state
     registerBtn.disabled = true
