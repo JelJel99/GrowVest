@@ -105,6 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
       agreeToTerms: formData.get("agreeToTerms"),
     }
 
+    const authManager = {
+      register(data) {
+        // Simpan ke localStorage atau validasi lainnya
+        console.log("Register data:", data)
+        localStorage.setItem("userData", JSON.stringify(data))
+      }
+    }
+
+
     // Validation
     if (userData.password.length < 6) {
       errorMessage.textContent = "Password minimal 6 karakter"
@@ -117,12 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
       errorMessage.classList.remove("hidden")
       return
     }
-
-    // if (!userData.agreeToTerms) {
-    //   errorMessage.textContent = "Anda harus menyetujui syarat dan ketentuan"
-    //   errorMessage.classList.remove("hidden")
-    //   return
-    // }
 
     // Show loading state
     registerBtn.disabled = true
